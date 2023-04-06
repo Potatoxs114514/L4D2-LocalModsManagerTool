@@ -1,0 +1,11 @@
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\bin\Debug\求生之路2Mod管理工具.exe.config
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\bin\Debug\求生之路2Mod管理工具.exe
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\bin\Debug\求生之路2Mod管理工具.pdb
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\obj\Debug\求生之路2Mod管理工具.csproj.AssemblyReference.cache
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\obj\Debug\求生之路2Mod管理工具.csproj.SuggestedBindingRedirects.cache
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\obj\Debug\求生之路2Mod管理工具.Form1.resources
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\obj\Debug\求生之路2Mod管理工具.Properties.Resources.resources
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\obj\Debug\求生之路2Mod管理工具.csproj.GenerateResource.cache
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\obj\Debug\求生之路2Mod管理工具.csproj.CoreCompileInputs.cache
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\obj\Debug\求生之路2Mod管理工具.exe
+C:\Users\Potatoxs\OneDrive\Project\求生之路2Mod管理工具\求生之路2Mod管理工具\obj\Debug\求生之路2Mod管理工具.pdb

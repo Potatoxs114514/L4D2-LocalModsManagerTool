@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "求生之路2Mod管理工具", "求生之路2Mod管理工具\求生之路2Mod管理工具.csproj", "{A321E30E-A447-446B-B5E7-EA3B02A4BC9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A321E30E-A447-446B-B5E7-EA3B02A4BC9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A321E30E-A447-446B-B5E7-EA3B02A4BC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A321E30E-A447-446B-B5E7-EA3B02A4BC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A321E30E-A447-446B-B5E7-EA3B02A4BC9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C8A1C37-61C9-4030-A470-05C7FFC88236}
+	EndGlobalSection
+EndGlobal
