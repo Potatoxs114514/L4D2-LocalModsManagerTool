@@ -61,7 +61,7 @@ namespace 求生之路2Mod管理工具
             Process[] pro = Process.GetProcesses();
             for (int i = 0; i < pro.Length; i++)
             {
-                if (pro[i].ProcessName == "steam")  //进程名字
+                if (pro[i].ProcessName.ToLower() == "steam")  //进程名字
                 {
 
                     steamPath = pro[i].MainModule.FileName;
@@ -75,7 +75,7 @@ namespace 求生之路2Mod管理工具
 
         private void GetSteamLibrary()
         {
-            string libraryPathFile = steamPath.Replace("steam.exe", "") + "config\\libraryfolders.vdf";
+            string libraryPathFile = steamPath.ToLower().Replace("steam.exe", "") + "config\\libraryfolders.vdf";
             Log("定位到Staem游戏库路径文件: " + libraryPathFile);
             string libraryInfo;
             using (StreamReader sr = new StreamReader(libraryPathFile, Encoding.Default))
@@ -351,6 +351,11 @@ namespace 求生之路2Mod管理工具
                     GetModType(tag);
                     Log(id + "\t > " + modType + name.Trim());
                     return modType + name;
+                }
+                else if (page.IndexOf("You must be logged in to view this item.") != -1)
+                {
+                    Log(id + "\t > " + "获取失败(物品可能含有敏感部分)");
+                    return id;
                 }
                 else
                 {

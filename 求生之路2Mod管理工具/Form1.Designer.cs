@@ -34,19 +34,19 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this._log = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.enableModsList = new System.Windows.Forms.ListBox();
-            this.disableModsList = new System.Windows.Forms.ListBox();
-            this.btn_disable = new System.Windows.Forms.Button();
-            this.btn_enable = new System.Windows.Forms.Button();
-            this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_refresh = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.openAddons = new System.Windows.Forms.Button();
-            this.startGame = new System.Windows.Forms.Button();
-            this.closeGame = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Cover = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.closeGame = new System.Windows.Forms.Button();
+            this.startGame = new System.Windows.Forms.Button();
+            this.openAddons = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_refresh = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_enable = new System.Windows.Forms.Button();
+            this.btn_disable = new System.Windows.Forms.Button();
+            this.disableModsList = new System.Windows.Forms.ListBox();
+            this.enableModsList = new System.Windows.Forms.ListBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -92,6 +92,17 @@
             this.tabPage2.Text = "创意工坊MOD转本地";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // Cover
+            // 
+            this.Cover.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Cover.Location = new System.Drawing.Point(242, 148);
+            this.Cover.Name = "Cover";
+            this.Cover.Size = new System.Drawing.Size(166, 102);
+            this.Cover.TabIndex = 0;
+            this.Cover.Text = "转换";
+            this.Cover.UseVisualStyleBackColor = true;
+            this.Cover.Click += new System.EventHandler(this.Cover_Click);
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.closeGame);
@@ -112,22 +123,83 @@
             this.tabPage1.Text = "本地MOD管理";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // enableModsList
+            // closeGame
             // 
-            this.enableModsList.AllowDrop = true;
-            this.enableModsList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.enableModsList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.enableModsList.FormattingEnabled = true;
-            this.enableModsList.ItemHeight = 12;
-            this.enableModsList.Location = new System.Drawing.Point(3, 3);
-            this.enableModsList.Name = "enableModsList";
-            this.enableModsList.Size = new System.Drawing.Size(269, 418);
-            this.enableModsList.TabIndex = 1;
-            this.enableModsList.Click += new System.EventHandler(this.enableModsList_Click);
-            this.enableModsList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.enableModsList_DrawItem);
-            this.enableModsList.DragDrop += new System.Windows.Forms.DragEventHandler(this.enableModsList_DragDrop);
-            this.enableModsList.DragEnter += new System.Windows.Forms.DragEventHandler(this.enableModsList_DragEnter);
-            this.enableModsList.DoubleClick += new System.EventHandler(this.enableModsList_DoubleClick);
+            this.closeGame.Location = new System.Drawing.Point(277, 35);
+            this.closeGame.Name = "closeGame";
+            this.closeGame.Size = new System.Drawing.Size(97, 23);
+            this.closeGame.TabIndex = 7;
+            this.closeGame.Text = "关闭游戏";
+            this.closeGame.UseVisualStyleBackColor = true;
+            this.closeGame.Click += new System.EventHandler(this.closeGame_Click);
+            // 
+            // startGame
+            // 
+            this.startGame.Location = new System.Drawing.Point(277, 6);
+            this.startGame.Name = "startGame";
+            this.startGame.Size = new System.Drawing.Size(97, 23);
+            this.startGame.TabIndex = 7;
+            this.startGame.Text = "启动游戏";
+            this.startGame.UseVisualStyleBackColor = true;
+            this.startGame.Click += new System.EventHandler(this.startGame_Click);
+            // 
+            // openAddons
+            // 
+            this.openAddons.Location = new System.Drawing.Point(277, 64);
+            this.openAddons.Name = "openAddons";
+            this.openAddons.Size = new System.Drawing.Size(97, 23);
+            this.openAddons.TabIndex = 7;
+            this.openAddons.Text = "打开Addons";
+            this.openAddons.UseVisualStyleBackColor = true;
+            this.openAddons.Click += new System.EventHandler(this.openAddons_Click);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(293, 377);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 42);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "[C]: 人物\r\n[W]: 武器\r\n[S]: 特感";
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Location = new System.Drawing.Point(278, 201);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(96, 23);
+            this.btn_refresh.TabIndex = 5;
+            this.btn_refresh.Text = "⭕ 刷新";
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(278, 230);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(96, 23);
+            this.btn_delete.TabIndex = 4;
+            this.btn_delete.Text = "× 删除";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_enable
+            // 
+            this.btn_enable.Location = new System.Drawing.Point(279, 158);
+            this.btn_enable.Name = "btn_enable";
+            this.btn_enable.Size = new System.Drawing.Size(96, 23);
+            this.btn_enable.TabIndex = 4;
+            this.btn_enable.Text = "← 启用";
+            this.btn_enable.UseVisualStyleBackColor = true;
+            this.btn_enable.Click += new System.EventHandler(this.btn_enable_Click);
+            // 
+            // btn_disable
+            // 
+            this.btn_disable.Location = new System.Drawing.Point(278, 128);
+            this.btn_disable.Name = "btn_disable";
+            this.btn_disable.Size = new System.Drawing.Size(97, 23);
+            this.btn_disable.TabIndex = 3;
+            this.btn_disable.Text = "禁用 →";
+            this.btn_disable.UseVisualStyleBackColor = true;
+            this.btn_disable.Click += new System.EventHandler(this.btn_disable_Click);
             // 
             // disableModsList
             // 
@@ -146,83 +218,22 @@
             this.disableModsList.DragEnter += new System.Windows.Forms.DragEventHandler(this.enableModsList_DragEnter);
             this.disableModsList.DoubleClick += new System.EventHandler(this.disableModsList_DoubleClick);
             // 
-            // btn_disable
+            // enableModsList
             // 
-            this.btn_disable.Location = new System.Drawing.Point(278, 128);
-            this.btn_disable.Name = "btn_disable";
-            this.btn_disable.Size = new System.Drawing.Size(97, 23);
-            this.btn_disable.TabIndex = 3;
-            this.btn_disable.Text = "禁用 →";
-            this.btn_disable.UseVisualStyleBackColor = true;
-            this.btn_disable.Click += new System.EventHandler(this.btn_disable_Click);
-            // 
-            // btn_enable
-            // 
-            this.btn_enable.Location = new System.Drawing.Point(279, 158);
-            this.btn_enable.Name = "btn_enable";
-            this.btn_enable.Size = new System.Drawing.Size(96, 23);
-            this.btn_enable.TabIndex = 4;
-            this.btn_enable.Text = "← 启用";
-            this.btn_enable.UseVisualStyleBackColor = true;
-            this.btn_enable.Click += new System.EventHandler(this.btn_enable_Click);
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.Location = new System.Drawing.Point(278, 230);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(96, 23);
-            this.btn_delete.TabIndex = 4;
-            this.btn_delete.Text = "× 删除";
-            this.btn_delete.UseVisualStyleBackColor = true;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
-            // btn_refresh
-            // 
-            this.btn_refresh.Location = new System.Drawing.Point(278, 201);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(96, 23);
-            this.btn_refresh.TabIndex = 5;
-            this.btn_refresh.Text = "⭕ 刷新";
-            this.btn_refresh.UseVisualStyleBackColor = true;
-            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(293, 377);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 42);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "[C]: 人物\r\n[W]: 武器\r\n[S]: 特感";
-            // 
-            // openAddons
-            // 
-            this.openAddons.Location = new System.Drawing.Point(277, 64);
-            this.openAddons.Name = "openAddons";
-            this.openAddons.Size = new System.Drawing.Size(97, 23);
-            this.openAddons.TabIndex = 7;
-            this.openAddons.Text = "打开Addons";
-            this.openAddons.UseVisualStyleBackColor = true;
-            this.openAddons.Click += new System.EventHandler(this.openAddons_Click);
-            // 
-            // startGame
-            // 
-            this.startGame.Location = new System.Drawing.Point(277, 6);
-            this.startGame.Name = "startGame";
-            this.startGame.Size = new System.Drawing.Size(97, 23);
-            this.startGame.TabIndex = 7;
-            this.startGame.Text = "启动游戏";
-            this.startGame.UseVisualStyleBackColor = true;
-            this.startGame.Click += new System.EventHandler(this.startGame_Click);
-            // 
-            // closeGame
-            // 
-            this.closeGame.Location = new System.Drawing.Point(277, 35);
-            this.closeGame.Name = "closeGame";
-            this.closeGame.Size = new System.Drawing.Size(97, 23);
-            this.closeGame.TabIndex = 7;
-            this.closeGame.Text = "关闭游戏";
-            this.closeGame.UseVisualStyleBackColor = true;
-            this.closeGame.Click += new System.EventHandler(this.closeGame_Click);
+            this.enableModsList.AllowDrop = true;
+            this.enableModsList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.enableModsList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.enableModsList.FormattingEnabled = true;
+            this.enableModsList.ItemHeight = 12;
+            this.enableModsList.Location = new System.Drawing.Point(3, 3);
+            this.enableModsList.Name = "enableModsList";
+            this.enableModsList.Size = new System.Drawing.Size(269, 418);
+            this.enableModsList.TabIndex = 1;
+            this.enableModsList.Click += new System.EventHandler(this.enableModsList_Click);
+            this.enableModsList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.enableModsList_DrawItem);
+            this.enableModsList.DragDrop += new System.Windows.Forms.DragEventHandler(this.enableModsList_DragDrop);
+            this.enableModsList.DragEnter += new System.Windows.Forms.DragEventHandler(this.enableModsList_DragEnter);
+            this.enableModsList.DoubleClick += new System.EventHandler(this.enableModsList_DoubleClick);
             // 
             // tabControl1
             // 
@@ -236,17 +247,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(661, 450);
             this.tabControl1.TabIndex = 0;
-            // 
-            // Cover
-            // 
-            this.Cover.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Cover.Location = new System.Drawing.Point(242, 148);
-            this.Cover.Name = "Cover";
-            this.Cover.Size = new System.Drawing.Size(166, 102);
-            this.Cover.TabIndex = 0;
-            this.Cover.Text = "转换";
-            this.Cover.UseVisualStyleBackColor = true;
-            this.Cover.Click += new System.EventHandler(this.Cover_Click);
             // 
             // Form1
             // 
