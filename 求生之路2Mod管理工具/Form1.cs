@@ -33,7 +33,7 @@ namespace 求生之路2Mod管理工具
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 3;
+            tabControl1.SelectedIndex = 2;
         }
 
         private void GetSteamState_Tick(object sender, EventArgs e)
@@ -372,8 +372,9 @@ namespace 求生之路2Mod管理工具
             Log("开始将创意工坊Mod移动到本地...");
             Rename(workshopPath, "*.vpk");
             tabControl1.Enabled = true;
-            tabControl1.SelectedIndex = 1;
+            tabControl1.SelectedIndex = 0;
             Log("已完成移动");
+            GetLocalMods();
         }
 
         private void GetModType(string text)
@@ -418,7 +419,7 @@ namespace 求生之路2Mod管理工具
             }
             else if (text.IndexOf("Scripts") != -1)
             {
-                modType = "[Scripts]";
+                modType = "[Script]";
             }
             else if (text.IndexOf("UI") != -1)
             {
