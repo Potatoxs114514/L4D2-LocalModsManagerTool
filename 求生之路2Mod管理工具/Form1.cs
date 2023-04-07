@@ -278,70 +278,68 @@ namespace 求生之路2Mod管理工具
 
         private void Rename(DirectoryInfo directory, string pattern)
         {
-            if (directory.Exists || pattern.Trim() != string.Empty)
+            if (!directory.Exists || pattern.Trim() == string.Empty) return;
+
+            try
             {
-                try
+                foreach (FileInfo info in directory.GetFiles(pattern))
                 {
-                    foreach (FileInfo info in directory.GetFiles(pattern))
+                    string name = info.Name.Substring(0, info.Name.LastIndexOf(ext));
+                    string itemName = GetSteamWorksItemName(name);
+                    if (itemName == "") continue;
+
+                    itemName = itemName.Replace(":", "：");
+                    itemName = itemName.Replace("\\", "");
+                    itemName = itemName.Replace("/", "of");
+                    itemName = itemName.Replace("*", "x");
+                    itemName = itemName.Replace("?", "？");
+                    itemName = itemName.Replace("\"", "");
+                    itemName = itemName.Replace("<", "[");
+                    itemName = itemName.Replace(">", "]");
+                    itemName = itemName.Replace("|", "-");
+                    itemName = itemName.Replace("\n", "");
+                    itemName = itemName.Replace("\r", "");
+                    itemName = itemName.Replace("\t", "");
+                    itemName = itemName.Replace("【", "[");
+                    itemName = itemName.Replace("】", "]");
+                    itemName = itemName.Replace("（", "(");
+                    itemName = itemName.Replace("）", ")");
+                    itemName = itemName.Replace("—", "-");
+                    while (itemName.IndexOf("  ") != -1)
                     {
-                        string name = info.Name.Substring(0, info.Name.LastIndexOf(ext));
-                        string itemName = GetSteamWorksItemName(name);
-                        if (itemName != "")
-                        {
-                            itemName = itemName.Replace(":", "：");
-                            itemName = itemName.Replace("\\", "");
-                            itemName = itemName.Replace("/", "of");
-                            itemName = itemName.Replace("*", "x");
-                            itemName = itemName.Replace("?", "？");
-                            itemName = itemName.Replace("\"", "");
-                            itemName = itemName.Replace("<", "[");
-                            itemName = itemName.Replace(">", "]");
-                            itemName = itemName.Replace("|", "-");
-                            itemName = itemName.Replace("\n", "");
-                            itemName = itemName.Replace("\r", "");
-                            itemName = itemName.Replace("\t", "");
-                            itemName = itemName.Replace("【", "[");
-                            itemName = itemName.Replace("】", "]");
-                            itemName = itemName.Replace("（", "(");
-                            itemName = itemName.Replace("）", ")");
-                            itemName = itemName.Replace("—", "-");
-                            while (itemName.IndexOf("  ") != -1)
-                            {
-                                itemName = itemName.Replace("  "," ");
-                            }
-                            while (Encoding.Default.GetByteCount(itemName) + 4 >= 60)
-                            {
-                                itemName = itemName.Substring(0, itemName.Length - 1);
-                            }
-                            string filePath = addonsPath + itemName + ext;
-                            if (!File.Exists(filePath))
-                            {
-                                info.MoveTo(filePath);
-                                Log(name + "\t > 已移动到 " + addonsPath + itemName + ext);
-                            }
-                            else
-                            {
-                                Log("文件已存在: " + addonsPath + itemName + ext);
-                            }
-                        }
+                        itemName = itemName.Replace("  "," ");
+                    }
+                    while (Encoding.Default.GetByteCount(itemName) + 4 >= 60)
+                    {
+                        itemName = itemName.Substring(0, itemName.Length - 1);
+                    }
+                    string filePath = addonsPath + itemName + ext;
+                    if (!File.Exists(filePath))
+                    {
+                        info.MoveTo(filePath);
+                        Log(name + "\t > 已移动到 " + addonsPath + itemName + ext);
+                    }
+                    else
+                    {
+                        Log("文件已存在: " + addonsPath + itemName + ext);
                     }
                 }
-                catch (System.Exception ex)
-                {
-                    Log(ex.ToString());
-                }
+            }
+            catch (Exception ex)
+            {
+                Log(ex.ToString());
             }
         }
 
         private string GetSteamWorksItemName(string id)
         {
             modType = "";
-            string Web = "https://steamcommunity.com/sharedfiles/filedetails/?id=" + id;
+            string web = "https://steamcommunity.com/sharedfiles/filedetails/?id=" + id;
             try
             {
                 WebClient MyWebClient = new WebClient();
                 MyWebClient.Credentials = CredentialCache.DefaultCredentials;
-                Byte[] pageData = MyWebClient.DownloadData(Web);
+                Byte[] pageData = MyWebClient.DownloadData(web);
                 string page = Encoding.UTF8.GetString(pageData);
                 if (page.IndexOf("<title>Steam Workshop::") != -1)
                 {
